@@ -1,1 +1,1 @@
-powershell -NoProfile -ExecutionPolicy Unrestricted .\windows_update.ps1
+powershell -ExecutionPolicy Unrestricted .\windows_update.ps1

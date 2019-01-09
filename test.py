@@ -19,3 +19,6 @@ listnumber = int(listnumber_str)
 updatename = Blist[listnumber]
 print(updatename)
 txt.close()
+
+
+#テスティングテスト
