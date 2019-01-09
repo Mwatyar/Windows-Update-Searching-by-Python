@@ -2,7 +2,8 @@
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import StringVar
-import sys
+
+import sys, codecs
 import threading 
 import os
 import socket
@@ -20,12 +21,40 @@ root.geometry("800x550")
 listbox = tk.Listbox(root,height=15,width=90)
 listbox.pack()
 
-
+Blist = []
 #updateのクラス   
 
 def Updatelistimport():
     bat_file = "ps1run.bat"
     os.system(bat_file)
+    txt = open('Updatelist.txt','r',encoding="UTF-16LE")
+    Blist = []
+
+    for line in txt:
+            if  '未インストールの更新' in line:
+                    pass
+        
+            elif '未インストール更新表示終了' in line:
+                    break
+                     
+        
+        
+            else:
+                    Blist.append(line)
+                    
+                    
+                    
+    listbox.insert(0,*Blist)
+
+    
+
+
+
+
+
+
+    
+
 
 def Messageboxinfo():
     messagebox.showinfo("情報","しばし待たれーい")  # 情報ダイアログ表示
@@ -51,6 +80,16 @@ ucButton.bind("<Button-1>",Multithread)
 
 
 #Windows update list text のインポート、又text内のupdatelist判別
+
+
+
+        
+                
+
+        
+
+
+
 
 
 

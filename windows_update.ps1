@@ -1,5 +1,5 @@
 ﻿# 0.このセッションが閉じるまで実行ポリシー変更
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy AllSigned -Force
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force
 
 # COMオブジェクトの作成。
 $Session = New-Object -ComObject Microsoft.Update.Session
@@ -9,6 +9,7 @@ $Searcher = $Session.CreateUpdateSearcher()
 # テキストファイルの初期化
 New-Item .\Updatelist.txt -ItemType file -Force 
 
+Write-Host '処理を開始します。しばらくお待ちください...'
 # 更新ファイルを探索。（未インストールの更新ファイルを探索）
 #$Results = $Searcher.Search("IsInstalled = 0 And Type = 'software'")
 
@@ -42,3 +43,6 @@ foreach ($Result in $Results.Updates) {
     }
 
 $AEnd | Out-File .\Updatelist.txt -Append
+
+Write-Host '処理が終了しました。'
+exit 
