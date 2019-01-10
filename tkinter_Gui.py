@@ -81,6 +81,8 @@ ucButton.bind("<Button-1>",Multithread)
 
 #Windows update list text のインポート、又text内のupdatelist判別
 
+#やったぜ
+
 
 
         
