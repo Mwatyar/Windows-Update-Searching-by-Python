@@ -23,14 +23,25 @@ listbox.pack()
 
 Alist = []
 Blist = []
+
+#メニューバー
+men = tk.Menu(root)
+root.config(menu=men)
+menu_select = tk.Menu(root,tearoff = False)
+men.add_cascade(label='リスト',menu=menu_select)
+men.add_radiobutton(label = "Not Installed", value = 0)
+men.add_radiobutton(label = "Installed", value = 1)
+
 #updateのクラス   
 
                          
-def Updatelistimport():
+def UpdateCheck():
     bat_file = "ps1run.bat"
     os.system(bat_file)
     txt = open('Updatelist.txt','r',encoding="UTF-16LE")
     Blist = []
+    Alist = []
+    data = 0
 
     for line in txt:
             if  '未インストールの更新' in line:
@@ -43,6 +54,23 @@ def Updatelistimport():
         
             else:
                     Blist.append(line)
+      
+
+    for line2 in txt:
+
+            if data == 0 and 'インストール済みの更新' not in line2:
+                    pass
+            elif 'インストール済みの更新' in line2:
+                    data =1
+                    pass          
+            elif 'インストール済み更新表示終了' in line2:
+                    break
+                                 
+            else:
+                    Alist.append(line2)
+
+
+    
                     
                     
                     
@@ -92,20 +120,13 @@ def Messageboxinfo():
 def Multithread1(self):
         if __name__ == "__main__":
                 m = threading.Thread(target = Messageboxinfo)
-                u = threading.Thread(target = Updatelistimport)
+                u = threading.Thread(target = UpdateCheck)
    
    
                 m.start()
                 u.start()
 
-def Multithread2(self):
-        if __name__ == "__main__":
-                m = threading.Thread(target = Messageboxinfo)
-                i = threading.Thread(target = InstalledCheck)
-   
-   
-                m.start()
-                i.start()
+
 
 #UpdateCheck_ボタン 
 ucButton=tk.Button(text=u'UpdateCheck',width=12)  
@@ -121,7 +142,7 @@ ucButton.bind("<Button-1>",Multithread1)
 #UpdateDownload_ボタン
 upButton = tk.Button(text=u'InstalledCheck',width=12)
 upButton.place(x=12, y=60)
-upButton.bind("<Button-1>",Multithread2)
+
 
 
         
