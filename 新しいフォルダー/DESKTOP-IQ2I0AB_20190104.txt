@@ -1,0 +1,31 @@
+﻿**********************
+Windows PowerShell トランスクリプト開始
+開始時刻: 20190104214435
+ユーザー名: DESKTOP-IQ2I0AB\user
+RunAs ユーザー: DESKTOP-IQ2I0AB\user
+構成名: 
+コンピューター: DESKTOP-IQ2I0AB (Microsoft Windows NT 10.0.17134.0)
+ホスト アプリケーション: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\python_WindowsUpdate\Windows_updatelist.ps1'
+プロセス ID: 2012
+PSVersion: 5.1.17134.407
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.407
+BuildVersion: 10.0.17134.407
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+トランスクリプトが開始されました。出力ファイル: .\DESKTOP-IQ2I0AB_20190104.txt
+DESKTOP-IQ2I0AB
+user
+
+2019年1月4日 21:44:35
+
+
+PS>$global:?
+True
+**********************
+Windows PowerShell トランスクリプト終了
+終了時刻: 20190104214446
+**********************
