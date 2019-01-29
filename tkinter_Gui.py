@@ -131,11 +131,46 @@ ucButton.bind("<Button-1>",Multithread1)
 
 
 #ここから入力したリストから、名前を取り出し検索。ダウンロード。
-def Installerdownload():
-        for updatename in Blist:
+class Installerdownload:
+
+        def __init__(self,downloadname):
+                self.downloadname = downloadname
+
+        def Chromedriver(self):
+                self.driver = webdriver.Chrome()
+                self.driver.get('https://www.catalog.update.microsoft.com/Search.aspx?q={}'.format(self.downloadname))
+                time.sleep(5)
+                self.driver.find_element_by_xpath('//*[@class="resultsbottomBorder resultsButtonWidth"]').click()
+                time.sleep(5)
+                self.driver.switch_to_window(driver.window_handles[1])
+                self.driver.find_element_by_tag_name('a').click()
+                time.sleep(10)
+                self.driver.quit()
+        
+
                 
 
-        driver = webdriver.Chrome()
+
+                
+
+
+
+                
+
+
+       
+
+
+
+
+
+
+def Installerdownload():
+        for updatename in Blist:
+
+                
+
+        
 
 
 
