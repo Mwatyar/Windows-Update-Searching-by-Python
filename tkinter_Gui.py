@@ -1,4 +1,4 @@
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import StringVar
@@ -145,33 +145,10 @@ class Installerdownload:
                 self.driver.switch_to_window(driver.window_handles[1])
                 self.driver.find_element_by_tag_name('a').click()
                 time.sleep(10)
+
                 self.driver.quit()
         
-
-                
-
-
-                
-
-
-
-                
-
-
-       
-
-
-
-
-
-
-def Installerdownload():
-        for updatename in Blist:
-
-                
-
         
-
 
 
 #UpdateDownload_ボタン
@@ -182,36 +159,6 @@ upButton.place(x=12, y=60)
 
         
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
